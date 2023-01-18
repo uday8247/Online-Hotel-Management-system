@@ -1,0 +1,27 @@
+.imageClass{
+  width:200px;
+  height:200px;
+}
+
+button.btn {
+  width: 100px;
+}
+.pointerCursor {
+  cursor: pointer;
+}
+
+.card-horizontal {
+  display: flex;
+  /*flex: 1 1 auto;*/
+  justify-content:flex-end;
+}
+.title{
+  display: flex;
+    width: 30rem;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.sp{
+  width:20rem;
+}

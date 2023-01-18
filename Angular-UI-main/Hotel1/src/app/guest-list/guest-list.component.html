@@ -1,0 +1,98 @@
+<div *ngFor="let guest of guests" class="container">
+    <app-accordion [title]="guest.guestname" [hasJustViewed]="selectedguestId === guest.emailid"
+        (notifyDelete)="onDeleteNotification($event)" [isHidden]="true">
+        <div class="card-horizontal myPanelBody row">
+            <div class="col-6">
+                <img class="imageClass" src="assets/images/pic.png" />
+            </div>
+            <div class="form col-6">
+
+                <div class="title">
+                    <div class="sp"> Guest Name </div>
+                    <div> : {{guest.guestname}} </div>
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Age </div>
+                    <div>: {{ guest.age}}</div>
+
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Gender</div>
+                    <div>: {{guest.gender}}</div>
+
+                </div>
+                <!-- <div class="title">
+
+                    <div class="sp"> No of Children</div>
+                    <div> : {{ guest.noofchildren}}</div>
+
+                </div>
+
+                <div class="title">
+
+                    <div class="sp"> No of Adults</div>
+                    <div> : {{ guest.noofadults}}</div>
+
+                </div> -->
+
+                <div class="title">
+
+                    <div class="sp"> Email Id</div>
+                    <div> : {{guest.emailid}}</div>
+
+                </div>
+
+                <div class="title">
+
+                    <div class="sp">Mobile No </div>
+                    <div> : {{guest.mobileno}}</div>
+
+                </div>
+
+                <!-- <div class="title">
+
+                    <div class="sp"> Country</div>
+                    <div> : {{guest.country}}</div>
+
+                </div>
+
+                <div class="title">
+
+                    <div class="sp"> State</div>
+                    <div> : {{guest.state}}</div>
+
+                </div>
+
+
+                <div class="title">
+
+                    <div class="sp"> City</div>
+                    <div> : {{guest.city}}</div>
+
+                </div>
+
+                <div class="title">
+
+                    <div class="sp"> Zipcode</div>
+                    <div> : {{guest.zipcode}}</div>
+
+                </div> -->
+
+            </div>
+        </div>
+        <div class="myPanelFooter">
+            <button (click)="updateGuest(guest.emailid)" class="btn btn-info"> Update</button>
+            <button (click)="guestDetails(guest.emailid)" class="btn btn-info" style="margin-left: 10px">View</button>
+            <span *ngIf="confirmDelete">
+                <span>Are you sure you want to Delete?</span>
+                <button class="btn btn-danger" (click)="deleteGuest(guest.emailid)"
+                    style="margin-left: 10px">Yes</button>
+                <button class="btn btn-primary" (click)="confirmDelete=false" style="margin-left: 10px">No</button>
+            </span>
+            <button *ngIf="!confirmDelete" class="btn btn-danger" (click)="confirmDelete=true"
+                style="margin-left: 10px">Delete</button>
+        </div>
+    </app-accordion>
+</div>

@@ -1,0 +1,38 @@
+<body class="background">
+    <img src="assets/images/3.jpg" class="back">
+    <div class=REC>
+        <h1> Reservation List</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Guest Name</th>
+                    <th> Room No</th>
+                    <th> Room Type </th>
+                    <th> Check in </th>
+                    <th> Check out </th>
+                    <th> Status</th>
+                    <th> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reservation of reservations">
+
+                    <td> {{ reservation.nameoftheguest }} </td>
+                    <td> {{ reservation.roomno }} </td>
+                    <td> {{ reservation.roomtype }} </td>
+                    <td> {{ reservation.checkin }} </td>
+                    <td> {{ reservation.checkout }} </td>
+                    <td> {{ reservation.status }} </td>
+                    <td>
+                        <button (click)="updateBookings(reservation.roomno)" class="btn btn-info"> Update</button>
+                        <button (click)="deleteReservation(reservation.roomno)" class="btn btn-danger"
+                            style="margin-left: 10px">Delete</button>
+                        <button (click)="ReservationDetails(reservation.roomno)" class="btn btn-info"
+                            style="margin-left: 10px">View</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

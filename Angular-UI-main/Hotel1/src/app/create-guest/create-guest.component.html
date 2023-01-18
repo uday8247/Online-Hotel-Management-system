@@ -1,0 +1,132 @@
+<body>
+    <img src="assets/images/Reception.jpg" class="back">
+    <div class="REC bg-agile">
+        <div class="book-appointment">
+            <h2>Add Guest</h2>
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+                <div class="book-form agileits-login">
+                    <div class="agileits_reservation_grid">
+
+                        <div class="phone_email">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" id="guestname" name="guestname" appAlpha
+                                    [(ngModel)]="guest.guestname" placeholder="Guest Name" required=""
+                                    #guestname="ngModel" autocomplete="off">
+                                <div *ngIf="guestname.invalid && (guestname.dirty || guestname.touched)" class="alert">
+                                    <div *ngIf="guestname.errors.required">
+                                        Name is required.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="phone_email phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" (keypress)="numberOnly($event)" id="age" [(ngModel)]="guest.age"
+                                    name="age" placeholder="Guest Age" required="" autocomplete="off">
+                            </div>
+                        </div>
+
+                        <div class="phone_email">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" id="gender" [(ngModel)]="guest.gender" appAlpha name="gender"
+                                    placeholder="Guest gender" required="">
+                            </div>
+                        </div>
+
+                        <div class="phone_email phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" (keypress)="numberOnly($event)" id="noofchildren"
+                                    [(ngModel)]="guest.noofchildren" name="noofchildren" placeholder="noofchildren"
+                                    required="" autocomplete="off">
+                            </div>
+                        </div>
+
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" (keypress)="numberOnly($event)" id="noofadults"
+                                    [(ngModel)]="guest.noofadults" name="noofadults" placeholder="noofadults"
+                                    required="" autocomplete="off">
+
+                            </div>
+                        </div>
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+
+                                <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required=""
+                                    id="email" name="email" [(ngModel)]="guest.emailid" #emailref="ngModel"
+                                    autocomplete="off" placeholder="Email">
+                                <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)"
+                                    class="alert alert-danger">
+                                    <div [hidden]="!emailref.errors?.pattern">
+                                        Invalid Email
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" (keypress)="numberOnly($event)" id="mobileno"
+                                    [(ngModel)]="guest.mobileno" name="mobileno" placeholder="mobileno" required=""
+                                    autocomplete="off">
+
+                            </div>
+                        </div>
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" id="country" [(ngModel)]="guest.country" appAlpha name="country"
+                                    placeholder="country" required="" autocomplete="off">
+
+                            </div>
+                        </div>
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" id="state" [(ngModel)]="guest.state" appAlpha name="state"
+                                    placeholder="state" required="" autocomplete="off">
+
+                            </div>
+                        </div>
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" id="city" [(ngModel)]="guest.city" appAlpha name="city"
+                                    placeholder="city" required="" autocomplete="off">
+
+                            </div>
+                        </div>
+
+                        <div class="span1_of_1 phone_email1">
+                            <div class="form-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="text" (keypress)="numberOnly($event)" id="zipcode"
+                                    [(ngModel)]="guest.zipcode" name="zipcode" placeholder="zipcode" required=""
+                                    autocomplete="off">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-success" type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>

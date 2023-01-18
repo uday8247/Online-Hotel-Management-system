@@ -1,0 +1,14 @@
+<body class="background">
+    <img src="assets/images/login.png" class="back">
+    <div class="login-box">
+        <img src="assets/images/img_avatar2.png" class="avatar">
+        <h1>Login </h1>
+        <form>
+            <p>Username</p>
+            <input type="text" name="username" [(ngModel)]="username" placeholder="Enter Username" required>
+            <p>Password</p>
+            <input type="password" name="password" [(ngModel)]="password" placeholder="Enter Password" required>
+            <input type="submit" name="submit" (click)=checkLogin() class="btn btn-success" value="Login">
+        </form>
+    </div>
+</body>

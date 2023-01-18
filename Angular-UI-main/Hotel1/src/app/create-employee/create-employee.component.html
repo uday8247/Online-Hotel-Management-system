@@ -1,0 +1,49 @@
+<body class="background">
+    <img src="assets/images/2.jpg" class="back">
+    <div class="REC col-md-6 offset-md-3">
+        <h3> Add Employee </h3>
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm" novalidate>
+            <div class="form-group">
+                <label> Employee Name</label>
+                <input type="text" class="form-control" id="employeename" required="" appAlpha
+                    [(ngModel)]="employee.employeename" name="employeename" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label> Age</label>
+                <input type="text" (keypress)="numberOnly($event)" class="form-control" id="age" required=""
+                    [(ngModel)]="employee.age" name="age" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label> Salary</label>
+                <input type="text" (keypress)="numberOnly($event)" class="form-control" id="salary" required=""
+                    [(ngModel)]="employee.salary" name="salary" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Designation</label>
+                <select name="designation" required="" [(ngModel)]="employee.designation">
+                    <option value="Receptionist">Receptionist</option>
+                    <option value="Floor Manager">Floor Manager</option>
+                    <option value="Driver">Driver</option>
+                    <option value="cleaner">cleaner</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required=""
+                    id="email" name="email" [(ngModel)]="employee.emailid" #emailref="ngModel" autocomplete="off">
+                <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class="alert alert-danger">
+                    <div [hidden]="!emailref.errors?.pattern">
+                        Invalid Email
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-success" type="submit" [disabled]="!myForm.form.valid">Submit</button>
+
+        </form>
+    </div>
+</body>

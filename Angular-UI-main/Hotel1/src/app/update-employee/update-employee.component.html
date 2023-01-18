@@ -1,0 +1,44 @@
+<body class="background">
+    <img src="assets/images/image.jpg" class="back">
+    <div class="REC col-md-6 offset-md-3">
+        <h3> Update Employee </h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label> Employee Name</label>
+                <input type="text" class="form-control" id="employeename" [(ngModel)]="employee.employeename"
+                    name="employeename">
+            </div>
+
+            <div class="form-group">
+                <label> Age</label>
+                <input type="text" class="form-control" id="age" [(ngModel)]="employee.age" name="age">
+            </div>
+
+            <div class="form-group">
+                <label> Salary</label>
+                <input type="text" class="form-control" id="salary" [(ngModel)]="employee.salary" name="salary">
+            </div>
+
+            <div class="form-group">
+                <label>Designation</label>
+                <select name="designation" [(ngModel)]="employee.designation">
+                    <option value="Receptionist">Receptionist</option>
+                    <option value="Floor Manager">Floor Manager</option>
+                    <option value="Driver">Driver</option>
+                    <option value="cleaner">cleaner</option>
+                    <option value="Chef">chef</option>
+                    <option value="Parking Manager">Parking Manager</option>
+                    <option value="Laundry Manager">Laundry Manager</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Email Id</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="employee.emailid" name="emailid">
+            </div>
+
+            <button class="btn btn-success" type="submit">Submit</button>
+
+        </form>
+    </div>
+</body>

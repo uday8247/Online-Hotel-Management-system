@@ -1,0 +1,63 @@
+<div *ngFor="let employee of employees" class="container">
+    <app-accordion [title]="employee.employeename" [hasJustViewed]="selectedEmployeeId === employee.emailid"
+        (notifyDelete)="onDeleteNotification($event)" [isHidden]="true">
+        <div class="card-horizontal myPanelBody row">
+            <div class="col-6">
+                <img class="imageClass" src="assets/images/pic.png" />
+            </div>
+            <div class="form col-6">
+
+                <div class="title">
+                    <div class="sp"> Name </div>
+                    <div> : {{employee.employeename}} </div>
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Age </div>
+                    <div>: {{ employee.age}}</div>
+
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Salary</div>
+                    <div>: {{employee.salary}}</div>
+
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Designation</div>
+                    <div> : {{ employee.designation}}</div>
+
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Email</div>
+                    <div> : {{employee.emailid}}</div>
+
+                </div>
+                <div class="title">
+
+                    <div class="sp"> Is Active</div>
+                    <div> : ACTIVE</div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="myPanelFooter">
+            <button (click)="updateEmployee(employee.emailid)" class="btn btn-info"> Update</button>
+            <button (click)="employeeDetails(employee.emailid)" class="btn btn-info"
+                style="margin-left: 10px">View</button>
+            <span *ngIf="confirmDelete">
+                <span>Are you sure you want to Delete?</span>
+                <button class="btn btn-danger" (click)="deleteEmployee(employee.emailid)"
+                    style="margin-left: 10px">Yes</button>
+                <button class="btn btn-primary" (click)="confirmDelete=false" style="margin-left: 10px">No</button>
+            </span>
+            <button *ngIf="!confirmDelete" class="btn btn-danger" (click)="confirmDelete=true"
+                style="margin-left: 10px">Delete</button>
+        </div>
+    </app-accordion>
+</div>

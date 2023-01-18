@@ -1,0 +1,43 @@
+<body>
+    <img src="assets/images/image.jpg" class="back">
+    <div class="REC" id="content" #content>
+        <h2> Guest Details</h2>
+        <div>
+
+            <div>
+                <label> <b> Guest Name: </b></label> {{guest.guestname}}
+            </div>
+            <div>
+                <label> <b> Age: </b></label> {{guest.age}}
+            </div>
+            <div>
+                <label> <b> Gender: </b></label> {{guest.gender}}
+            </div>
+            <div>
+                <label> <b> Noofchildren: </b></label> {{guest.noofchildren}}
+            </div>
+            <div>
+                <label> <b> Noofadults: </b></label> {{guest.noofadults}}
+            </div>
+            <div>
+                <label> <b> Email Id: </b></label> {{guest.emailid}}
+            </div>
+            <div>
+                <label> <b>Mobile No: </b></label> {{guest.mobileno}}
+            </div>
+            <div>
+                <label> <b> Country: </b></label> {{guest.country}}
+            </div>
+            <div>
+                <label> <b> State: </b></label> {{guest.state}}
+            </div>
+            <div>
+                <label> <b> City: </b></label> {{guest.city}}
+            </div>
+            <div>
+                <label> <b> Zipcode: </b></label> {{guest.zipcode}}
+            </div>
+            <button (click)="downloadPDF()">Export To PDF</button>
+        </div>
+    </div>
+</body>

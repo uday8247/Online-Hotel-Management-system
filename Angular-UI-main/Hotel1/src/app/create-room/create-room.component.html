@@ -1,0 +1,43 @@
+<body class="background">
+    <img src="assets/images/Room.jpg" class="back">
+    <div class="REC col-md-6 offset-md-3">
+        <h3> Add Room </h3>
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+            <!-- <div class="form-group">
+                <label> Room no</label>
+                <input type="text" class="form-control" id="roomno" required [(ngModel)]="room.roomno" name="roomno"
+                    autocomplete="off">
+            </div> -->
+
+            <div class="form-group">
+                <label> Room no</label>
+                <input type="text" (keypress)="numberOnly($event)" class="form-control" id="roomno" required=""
+                    [(ngModel)]="room.roomno" name="roomno" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label>Room type</label>
+                <select name="roomtype" required="" [(ngModel)]="room.roomtype">
+                    <option value="Single">Single</option>
+                    <option value="Double">Double</option>
+                    <option value="Triple">Triple</option>
+                    <option value="Quad">Quad</option>
+                    <option value="King">King</option>
+                    <option value="Queen">Queen</option>
+                    <option value="Twin">Twin</option>
+                    <option value="Presidential">Presendential</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Price</label>
+                <input type="text" class="form-control" (keypress)="numberOnly($event)" id="price" required
+                    [(ngModel)]="room.price" name="price" autocomplete="off">
+            </div>
+
+            <button class="btn btn-success" type="submit" [disabled]="!myForm.form.valid">Submit</button>
+
+        </form>
+    </div>
+</body>

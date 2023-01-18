@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+
+    <a *ngFor="let item of routesToShow" [routerLink]="item.route" routerLinkActive="active"
+      class="nav-link">{{item.value}}</a>
+
+  </nav>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.Hotel Crown Plaza.com" class="navbar-brand">Hotel Crown Plaza</a></div>
+
+    <ul class="navbar-nav">
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+
+
+    </ul>
+
+  </nav>
+
+</header>

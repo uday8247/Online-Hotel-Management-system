@@ -1,0 +1,36 @@
+<body class="background">
+    <img src="assets/images/image.jpg" class="back">
+    <div class="REC col-md-6 offset-md-3">
+        <h3> UPDATE ROOM</h3>
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label> Room no</label>
+                <input type="text" class="form-control" id="roomno" [(ngModel)]="room.roomno" name="roomno">
+            </div>
+
+            <div class="form-group">
+                <label>Room type</label>
+                <select name="roomtype" required="" [(ngModel)]="room.roomtype">
+                    <option value="Single">Single</option>
+                    <option value="Double">Double</option>
+                    <option value="Triple">Triple</option>
+                    <option value="Quad">Quad</option>
+                    <option value="King">King</option>
+                    <option value="Queen">Queen</option>
+                    <option value="Twin">Twin</option>
+                    <option value="Presidential">Presendential</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label> Price</label>
+                <input type="text" class="form-control" id="price" [(ngModel)]="room.price" name="price">
+            </div>
+
+            <button class="btn btn-success" type="submit">Submit</button>
+
+        </form>
+    </div>
+</body>

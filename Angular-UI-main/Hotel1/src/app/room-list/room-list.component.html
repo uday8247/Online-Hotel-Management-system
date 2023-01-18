@@ -1,0 +1,33 @@
+<body class="background">
+    <img src="assets/images/3.jpg" class="back">
+    <div class=REC>
+        <h1> Room List</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Roomno</th>
+                    <th> Roomtype </th>
+                    <th> Price </th>
+                    <th> Actions </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of rooms">
+
+                    <td> {{ room.roomno }} </td>
+                    <td> {{ room.roomtype }} </td>
+                    <td> {{ room.price }} </td>
+
+
+                    <td>
+                        <button (click)="updateRoom(room.roomno)" class="btn btn-info"> Update</button>
+                        <button (click)="deleteRoom(room.roomno)" class="btn btn-danger"
+                            style="margin-left: 10px">Delete</button>
+                        <button (click)="roomDetails(room.roomno)" class="btn btn-info" style="margin-left: 10px">
+                            View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
